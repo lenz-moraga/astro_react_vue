@@ -1,0 +1,25 @@
+---
+import { Navigation, ProductCard } from "../components/React/organism";
+import SidePanel from "../components/Vue/SidePanel.vue";
+import Layout from "../layouts/Layout.astro";
+
+import { products } from "src/assets/products";
+---
+
+<Layout title="Welcome to Astro.">
+  <!-- TODO: Add Logo, some mock Links and convert this to an Astro component -->
+  <header class="flex flex-row-reverse m-4">
+    <Navigation client:load />
+  </header>
+  <!-- TODO: Add the ProductGrid Template -->
+  <ProductCard
+    product={products[0]}
+    cardBgColor="blue"
+    textColor="primary"
+    imageSize="large"
+    titleSize="large"
+    client:load
+  />
+
+  <SidePanel client:load />
+</Layout>
