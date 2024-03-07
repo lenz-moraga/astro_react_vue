@@ -1,5 +1,5 @@
 import React from "react";
-import { PriceTag, Text, Title } from "../../atoms";
+import { PriceTag, Text, Title } from "@/components/React/atoms";
 
 interface ProductDescriptionProps {
   name: string;

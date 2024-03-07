@@ -1,4 +1,6 @@
 ---
+import { Navigation } from "@/components/React/organism";
+
 interface Props {
   title: string;
 }
@@ -17,6 +19,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <header class="flex justify-end m-4 items-center gap-4">
+      <Navigation client:load />
+    </header>
     <slot />
   </body>
 </html>

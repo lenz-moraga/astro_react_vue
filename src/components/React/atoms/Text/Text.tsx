@@ -27,7 +27,7 @@ export const Text: React.FC<TextProps> = ({
 
   return (
     <p
-      className={`${sizeStyle[size]} ${colorStyle[color]} ${weightStyle} mb-2`}
+      className={`${sizeStyle[size]} ${colorStyle[color]} ${weightStyle} mb-2 h-[75px] line-clamp-3`}
     >
       {children}
     </p>

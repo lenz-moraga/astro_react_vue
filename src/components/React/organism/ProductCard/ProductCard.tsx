@@ -1,16 +1,8 @@
-import React from "react";
-import { Button, Image } from "../../atoms";
-import { ProductDescription } from "../../molecules";
+import React, { useCallback } from "react";
+import { Button, Image } from "@/components/React/atoms";
+import { ProductDescription } from "@/components/React/molecules";
 
-import { useStore } from "@nanostores/react";
-import { itemsStore, addCartItem } from "src/store/cartStore.ts";
-
-export interface Product {
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-}
+import { addCartItem, type Product } from "@/store/cartStore.ts";
 
 interface ProductCardProps {
   product: Product;
@@ -32,23 +24,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     blue: "bg-blue-100",
     white: "bg-white",
   };
-  const handleAddToCart = () => {
-    // TODO: Adapt the information of the CartItems
-
-    const hardcodedItemInfo = {
-      id: "astronaut-figurine",
-      name: "Astronaut Figurine",
-      imageSrc: "./public/favicon.svg",
-    };
-
-    addCartItem(hardcodedItemInfo);
-  };
+  const handleAddToCart = useCallback(() => {
+    addCartItem(product);
+  }, []);
 
   return (
     <div
-      className={`max-w-sm rounded overflow-hidden shadow-lg p-4 m-4 ${BgColor[cardBgColor]}`}
+      className={`max-w-sm rounded overflow-hidden shadow-lg p-4 m-4 ${BgColor[cardBgColor]} flex flex-col justify-between`}
     >
-      <Image src={product.image} alt={product.name} size={imageSize} />
+      <Image src={product.imageSrc} alt={product.name} size={imageSize} />
       <div className="px-6 py-4">
         <ProductDescription
           name={product.name}

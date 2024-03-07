@@ -25,7 +25,7 @@ export const Title: React.FC<TitleProps> = ({
 
   return (
     <div
-      className={`${sizeStyle[size]} ${colorStyle[color]} font-bold mb-2`}
+      className={`${sizeStyle[size]} ${colorStyle[color]} font-bold mb-2 h-[75px] line-clamp-2`}
     >
       {children}
     </div>

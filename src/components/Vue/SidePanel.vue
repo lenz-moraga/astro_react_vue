@@ -4,25 +4,29 @@
     <aside v-if="isVisible">
         <div class="overlay" @click="closePanel"></div>
         <div class="side-panel">
-            <h2>Side Panel</h2>
-            <ul v-if="Object.values(productsItems).length">
-                <li v-for="cartItem in Object.values(productsItems)" v-bind:key="cartItem.name">
-                    <img :src=cartItem.imageSrc :alt=cartItem.name />
-                    <h3>{{ cartItem.name }}</h3>
-                    <p>Quantity: {{ cartItem.quantity }}</p>
-                </li>
-            </ul>
+            <div v-if="Object.values(productsItems).length">
+                <h2>Side Panel</h2>
+                <ul>
+                    <li v-for="cartItem in Object.values(productsItems)" v-bind:key="cartItem.name">
+                        <img :src=cartItem.imageSrc :alt=cartItem.name />
+                        <h3>{{ cartItem.name }}</h3>
+                        <p>Quantity: {{ cartItem.quantity }}</p>
+                    </li>
+                </ul>
+                <p>Total: {{ total }}</p>
+            </div>
             <p v-else>Your cart is empty!</p>
         </div>
     </aside>
 </template>
 
 <script setup>
-import { cartItems, isCartOpen } from "@/store/cartStore";
+import { cartItems, isCartOpen, calculateTotal } from "@/store/cartStore";
 import { useStore } from '@nanostores/vue';
 
 const isVisible = useStore(isCartOpen);
 const productsItems = useStore(cartItems);
+const total = useStore(calculateTotal);
 
 
 const closePanel = () => {

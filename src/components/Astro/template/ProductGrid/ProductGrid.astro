@@ -1,0 +1,19 @@
+---
+import { products } from "@/assets/products";
+import { ProductCard } from "@/components/React/organism";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+  {
+    products.map((product) => (
+      <ProductCard
+        product={product}
+        cardBgColor="blue"
+        textColor="primary"
+        imageSize="large"
+        titleSize="large"
+        client:load
+      />
+    ))
+  }
+</div>
