@@ -1,54 +1,74 @@
-# Astro Starter Kit: Basics
+# Astro React Vue
 
-```sh
-npm create astro@latest -- --template basics
+This is a demo project showcasing the integration of UI frameworks like React and Vue within the Astro.js ecosystem, utilizing Nano Stores for state management and TailwindCSS for styling. This project serves as a practical example of creating a product list in React, adding items to a shopping cart implemented in Vue, and leveraging Nano Stores for shared state management across different framework components ("islands").
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+To set up this project locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/lenz-moraga/astro_react_vue
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd astro-react-vue
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+After installation, you can start the development server to see the application in action:
+
+```bash
+npm start
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+This will run the application on `http://localhost:4321/`. You can interact with the product list in React and manage the shopping cart in Vue, observing how Nano Stores facilitates state sharing across these frameworks.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Scripts
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+The following scripts are available in this project:
 
-## 🚀 Project Structure
+- `npm run dev`: Runs the development server.
+- `npm start`: Alias for `npm run dev`.
+- `npm run build`: Builds the application for production.
+- `npm run preview`: Previews the build locally.
+- `npm run astro`: Runs Astro CLI commands.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Dependencies
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Key dependencies include:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Astro**: The core of the application, enabling integration with React and Vue.
+- **React and Vue**: Used for demonstrating component-based UIs.
+- **Nano Stores**: Manages state sharing between React and Vue components.
+- **TailwindCSS**: Provides utility-first styling.
+- **TypeScript**: For adding types to JavaScript code.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Contributing
 
-Any static assets, like images, can be placed in the `public/` directory.
+Contributions are welcome! If you have suggestions or want to contribute, please fork the repository and create a pull request.
 
-## 🧞 Commands
+## License
 
-All commands are run from the root of the project, from a terminal:
+This project is open-source and available under the [MIT License](LICENSE).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
